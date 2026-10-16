@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECO AI – TRỢ LÝ PHÂN LOẠI RÁC THÔNG MINH | Ươm mầm tri thức, kiến tạo tương lai</title>
+  <meta name="description" content="Trang web ECO AI - Trợ lý phân loại rác thông minh, bản đồ xanh các điểm tái chế, đấu trường thử thách sống xanh và đổi quà sinh thái. Ươm mầm tri thức, kiến tạo tương lai.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #064e3b;
+      --primary-light: #ecfdf5;
+      --accent: #10b981;
+      --accent-soft: #d1fae5;
+      --text-main: #064e3b;
+      --text-dark: #111827;
+      --text-muted: #4b5563;
+      --bg-page: #f8faf8;
+      --card-bg: #ffffff;
+      --border-color: #e5e7eb;
+      --border-green: #a7f3d0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    /* HEADER NAVIGATION */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .brand-icon {
+      background: var(--accent-soft);
+      color: var(--primary);
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-size: 1.25rem;
+      box-shadow: 0 2px 5px rgba(5, 150, 105, 0.15);
+    }
+    nav {
+      display: flex;
+      gap: 1.35rem;
+      align-items: center;
+    }
+    nav a, .nav-btn {
+      color: #374151;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    nav a:hover, .nav-btn:hover, .nav-btn.active { color: var(--primary); }
+    .nav-badge-pill {
+      background: #fef3c7;
+      color: #b45309;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      margin-left: 0.3rem;
+      border: 1px solid #fde68a;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .user-eco-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #065f46;
+      cursor: pointer;
+    }
+    .btn-cta {
+      background: var(--primary);
+      color: white;
+      padding: 0.55rem 1.25rem;
+      border-radius: 10px;
+      border: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.2);
+    }
+    .btn-cta:hover {
+      background: #047857;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--primary-dark);
+      border: 1px solid var(--border-green);
+      padding: 0.55rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover { background: var(--primary-light); }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      cursor: pointer;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    section {
+      padding: 4.5rem 0;
+      border-bottom: 1px solid #f0fdf4;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+    .section-kicker {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+    .section-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    /* 1. HERO */
+    .hero {
+      background: linear-gradient(180deg, #ecfdf5 0%, #f7fbf8 60%, #ffffff 100%);
+      padding: 4.5rem 0 3.5rem;
+      text-align: center;
+    }
+    .slogan-pill {
+      display: inline-block;
+      background: #d1fae5;
+      color: #065f46;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+      border: 1px solid #a7f3d0;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      color: #064e3b;
+      line-height: 1.15;
+      max-width: 900px;
+      margin: 0 auto 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #374151;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-visual-box {
+      margin-top: 1.5rem;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(6, 78, 59, 0.15);
+      box-shadow: 0 20px 35px -10px rgba(6, 78, 59, 0.15);
+      background: #064e3b;
+      position: relative;
+    }
+    .hero-img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+    }
+    .hero-img-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+    }
+    .hero-solution-card-desktop {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      max-width: 440px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 1.2rem;
+      border-radius: 14px;
+      text-align: left;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .hero-solution-card-mobile {
+      display: none;
+      background: #ffffff;
+      padding: 1.2rem;
+      border-radius: 14px;
+      text-align: left;
+      margin-top: 0.85rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+    .metric-card {
+      background: white;
+      padding: 1.25rem;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+    }
+    .metric-val {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 0.25rem;
+    }
+    .metric-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+    /* 2. GIỚI THIỆU */
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .standard-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+    .standard-card:hover { transform: translateY(-4px); }
+    .card-recyc { border-top: 5px solid #f59e0b; }
+    .card-organic { border-top: 5px solid #10b981; }
+    .card-hazard { border-top: 5px solid #ef4444; }
+    .standard-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+    }
+    .badge-yellow { background: #fef3c7; color: #b45309; }
+    .badge-green { background: #d1fae5; color: #047857; }
+    .badge-red { background: #fee2e2; color: #b91c1c; }
+    .standard-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    .item-list {
+      list-style: none;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #374151;
+    }
+    .item-list li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    /* 3. NHẬN DIỆN AI */
+    .classifier-layout {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .dropzone-card {
+      background: white;
+      border: 2px dashed #a7f3d0;
+      border-radius: 16px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+    }
+    .dropzone-card:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+    .preset-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .pill-btn {
+      background: white;
+      border: 1px solid var(--border-color);
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .pill-btn:hover, .pill-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .ai-result-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+    .result-bin-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: white;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .decomp-box {
+      background: #f9fafb;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1.25rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      font-size: 0.85rem;
+    }
+    .steps-box {
+      background: #f0fdf4;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      border: 1px solid #d1fae5;
+    }
+    .steps-box ol { margin-left: 1.2rem; margin-top: 0.5rem; }
+    .steps-box li { margin-bottom: 0.35rem; }
+    /* 4. BẢN ĐỒ XANH */
+    .map-layout {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: 1.5rem;
+    }
+    .map-viewport {
+      background: #ecfdf5;
+      border-radius: 16px;
+      border: 1px solid var(--border-green);
+      height: 420px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-pin {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transform: translate(-50%, -50%);
+    }
+    .map-pin:hover, .map-pin.active {
+      transform: translate(-50%, -50%) scale(1.25);
+      background: #047857;
+      z-index: 10;
+    }
+    .locations-list {
+      max-height: 420px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-right: 0.5rem;
+    }
+    .loc-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      cursor: pointer;
+    }
+    .loc-card:hover, .loc-card.active {
+      border-color: var(--primary);
+      background: #f0fdf4;
+    }
+
+    /* 5. TRANG RIÊNG: THỬ THÁCH SỐNG XANH & ĐỔI QUÀ */
+    .challenges-page-view {
+      display: none;
+      padding: 2.5rem 0 5rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .back-btn-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .back-link:hover { color: var(--primary); }
+    /* HERO PROFILE & STREAK BANNER */
+    .user-profile-banner {
+      background: linear-gradient(135deg, #064e3b 0%, #047857 70%, #059669 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 15px 30px -10px rgba(6, 78, 59, 0.35);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+    .streak-big-val {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: #fed7aa;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    /* 7-DAY STREAK ROW */
+    .streak-week-track {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .streak-day-item {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 12px;
+      padding: 0.5rem 0.75rem;
+      text-align: center;
+      min-width: 55px;
+    }
+    .streak-day-item.done {
+      background: #fef08a;
+      color: #854d0e;
+      border-color: #fde047;
+      font-weight: 800;
+    }
+    .streak-day-item.today {
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    /* CHECK-IN CARD */
+    .checkin-action-card {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text-dark);
+      padding: 1.5rem;
+      border-radius: 18px;
+      text-align: center;
+      min-width: 260px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    .btn-checkin {
+      background: #ea580c;
+      color: white;
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 12px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+      transition: all 0.2s;
+    }
+    .btn-checkin:hover:not(:disabled) {
+      background: #c2410c;
+      transform: translateY(-2px);
+    }
+    .btn-checkin:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    /* CHALLENGES TABS */
+    .hub-tabs {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+      overflow-x: auto;
+    }
+    .hub-tab-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #6b7280;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .hub-tab-btn.active {
+      color: var(--primary-dark);
+      background: #d1fae5;
+    }
+    /* GIFT SHOP GRID */
+    .gift-shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .gift-item-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .gift-item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1);
+      border-color: #a7f3d0;
+    }
+    .gift-icon-box {
+      font-size: 3rem;
+      text-align: center;
+      padding: 1rem 0;
+      background: #f8faf8;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+    .gift-points-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 800;
+      background: #fef3c7;
+      color: #b45309;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    .gift-btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.65rem;
+      border-radius: 10px;
+      border: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: var(--primary);
+      color: white;
+      transition: all 0.2s;
+    }
+    .gift-btn:hover { background: #047857; }
+    /* REDEEMED GIFTS LIST */
+    .redeemed-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .redeemed-item {
+      background: white;
+      border: 1px solid #d1fae5;
+      padding: 1.25rem 1.5rem;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .redeem-code {
+      font-family: monospace;
+      font-weight: 800;
+      background: #f3f4f6;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      color: #065f46;
+      font-size: 0.9rem;
+    }
+    /* 6. CHATBOT NÚT NỔI & CỬA SỔ POP-UP */
+    .chat-floating-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #059669;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 0.75rem 1.4rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.4);
+      z-index: 9998;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .chat-floating-btn:hover {
+      background: #047857;
+      transform: translateY(-2px);
+    }
+    .chat-popup-window {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 380px;
+      max-width: calc(100vw - 32px);
+      height: 520px;
+      max-height: 85vh;
+      background: #ffffff;
+      border: 1px solid #d1fae5;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 9999;
+      animation: popIn 0.25s ease-out;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: translateY(15px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .chat-popup-header {
+      background: #047857;
+      color: white;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .chat-popup-messages {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: #fafcfa;
+    }
+    .chat-msg {
+      max-width: 85%;
+      padding: 0.7rem 0.95rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      line-height: 1.45;
+    }
+    .msg-user {
+      align-self: flex-end;
+      background: #047857;
+      color: white;
+      border-bottom-right-radius: 2px;
+    }
+    .msg-bot {
+      align-self: flex-start;
+      background: #ffffff;
+      color: #1f2937;
+      border: 1px solid #e5e7eb;
+      border-bottom-left-radius: 2px;
+    }
+    .chat-popup-input-bar {
+      display: flex;
+      padding: 0.65rem;
+      border-top: 1px solid var(--border-color);
+      gap: 0.5rem;
+      background: #ffffff;
+    }
+    .chat-popup-input {
+      flex: 1;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+    .chat-popup-input:focus { border-color: var(--primary); }
+    /* FOOTER */
+    footer {
+      background: #064e3b;
+      color: #d1fae5;
+      padding: 3.5rem 1.5rem 2.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    /* LIGHTBOX */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .lightbox-modal img {
+      max-width: 95vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      .classifier-layout, .map-layout { grid-template-columns: 1fr; }
+      .standards-grid { grid-template-columns: 1fr; }
+      .user-profile-banner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .menu-toggle { display: block; }
+      .metrics-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+      .hero-solution-card-desktop { display: none; }
+      .hero-solution-card-mobile { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVIGATION -->
+  <header>
+    <div class="brand" onclick="navigateToPage('main')">
+      <div class="brand-icon">🌱</div>
+      <span>ECO <span style="color:var(--primary);">AI</span></span>
+    </div>
+    
+    <nav id="mainNav">
+      <button class="nav-btn" onclick="navigateToPage('main', 'home')">Trang chủ</button>
+      <button class="nav-btn" onclick="navigateToPage('main', 'about')">Giới thiệu</button>
+      <button class="nav-btn" onclick="navigateToPage('main', 'classifier')">Nhận diện AI</button>
+      <button class="nav-btn" onclick="navigateToPage('main', 'map')">Bản đồ xanh</button>
+      <button class="nav-btn" onclick="navigateToPage('challenges')" style="color:#047857; font-weight:700;">
+        Thử thách & Đổi quà <span class="nav-badge-pill">🔥 Đổi quà</span>
+      </button>
+      <button class="nav-btn" onclick="toggleChatWindow(true)">Trợ lý Chatbot</button>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Eco Points Tracker in Header -->
+      <div class="user-eco-pill" onclick="navigateToPage('challenges')" title="Bấm để vào trang đổi quà">
+        <span>🌱</span>
+        <span id="navEcoScore">185</span> Điểm
+      </div>
+      <button class="btn-cta" onclick="navigateToPage('main', 'classifier')">Quét rác AI</button>
+      <button class="menu-toggle" onclick="toggleMobileNav()">☰</button>
+    </div>
+  </header>
+
+  <!-- ==================== TRANG 1: HỆ THỐNG CHÍNH ==================== -->
+  <div id="page-main">
+    
+    <!-- PHẦN 1: TRANG CHỦ -->
+    <section id="home" class="hero">
+      <div class="container">
+        <span class="slogan-pill">Ươm mầm tri thức, kiến tạo tương lai</span>
+        <h1 class="hero-title">ECO AI – Trợ Lý Phân Loại Rác Thông Minh</h1>
+        <p class="hero-subtitle">
+          Ứng dụng trí tuệ nhân tạo nhận diện và phân loại rác tại nguồn chuẩn xác theo Luật Bảo vệ Môi trường Việt Nam, kết nối chuỗi tái chế tuần hoàn và ươm mầm lối sống xanh cho tương lai.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#classifier" class="btn-cta">📸 Nhận diện rác bằng AI</a>
+          <button class="btn-secondary" onclick="navigateToPage('challenges')">🎁 Đấu trường thử thách & Đổi quà</button>
+        </div>
+
+        <!-- HÌNH ẢNH TOÀN CẢNH - HIỂN THỊ 100% ĐẦY ĐỦ TRÊN ĐIỆN THOẠI -->
+        <div class="hero-visual-box">
+          <img
+            src="/src/assets/images/hero_eco_ai_green_1791815814731.jpg"
+            alt="Mô hình thành phố sinh thái xanh thông minh ECO AI"
+            class="hero-img"
+            id="heroImg"
+            onclick="openLightbox()"
+          >
+          <div class="hero-img-badge" onclick="openLightbox()">🔍 Xem toàn cảnh</div>
+
+          <div class="hero-solution-card-desktop">
+            <strong style="color:#064e3b; font-size:0.95rem; display:block; margin-bottom:0.25rem;">
+              ♻️ Giải pháp toàn diện vì Việt Nam không rác thải
+            </strong>
+            <p style="font-size:0.8rem; color:#4b5563; line-height:1.45;">
+              Chỉ cần 1 giây chụp ảnh, ECO AI phân tích tức thì thành phần, thời gian phân hủy và đề xuất thùng rác chuẩn xác.
+            </p>
+            <div style="margin-top:0.5rem; font-size:0.75rem; color:#059669; font-weight:600;">
+              ✓ Tuân thủ quy chuẩn phân loại 3 nhóm rác quốc gia
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-solution-card-mobile">
+          <strong style="color:#064e3b; font-size:0.9rem; display:block; margin-bottom:0.25rem;">
+            ♻️ Giải pháp toàn diện vì Việt Nam không rác thải
+          </strong>
+          <p style="font-size:0.8rem; color:#4b5563; line-height:1.45;">
+            Chỉ cần 1 giây chụp ảnh, ECO AI phân tích tức thì thành phần, thời gian phân hủy và đề xuất thùng rác chuẩn xác.
+          </p>
+          <div style="margin-top:0.4rem; font-size:0.75rem; color:#059669; font-weight:600;">
+            ✓ Tuân thủ quy chuẩn phân loại 3 nhóm rác quốc gia
+          </div>
+        </div>
+
+        <!-- SỐ LIỆU TÁC ĐỘNG -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-val">98.6%</div>
+            <div class="metric-label">Độ chính xác nhận diện</div>
+            <div class="metric-sub">Huấn luyện trên 50.000+ mẫu rác Việt Nam</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">128.450+</div>
+            <div class="metric-label">Lượt phân loại thành công</div>
+            <div class="metric-sub">Đồng hành cùng học sinh và hộ gia đình</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">46.2 tấn</div>
+            <div class="metric-label">Rác đưa vào tái chế</div>
+            <div class="metric-sub">Giảm hơn 38.000 kg khí thải nhà kính CO2</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PHẦN 2: GIỚI THIỆU -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Tiêu chuẩn quốc gia</div>
+          <h2 class="section-title">Chuẩn Phân Loại 3 Nhóm Rác Tại Nguồn</h2>
+          <p class="section-desc">
+            Căn cứ theo Luật Bảo vệ Môi trường Việt Nam năm 2020. Việc phân loại rác đúng giúp giảm thiểu ô nhiễm và tái tạo nguồn tài nguyên quý giá cho đất nước.
+          </p>
+        </div>
+
+        <div class="standards-grid">
+          <div class="standard-card card-recyc">
+            <div>
+              <span class="standard-badge badge-yellow">Thùng Màu Trắng / Vàng</span>
+              <h3 class="standard-title">1. Rác Thải Tái Chế</h3>
+              <p style="font-size:0.85rem; color:#6b7280;">Vật liệu có khả năng tái sinh thành sản phẩm mới.</p>
+              <ul class="item-list">
+                <li>✓ Chai nhựa PET, can nhựa HDPE</li>
+                <li>✓ Vỏ lon nhôm, hộp thiếc, phế liệu sắt</li>
+                <li>✓ Giấy báo, bìa carton, tập vở học sinh</li>
+                <li>✓ Vỏ hộp sữa giấy tiệt trùng đa lớp</li>
+              </ul>
+            </div>
+            <div style="margin-top:1.25rem; font-size:0.8rem; color:#b45309; font-weight:600;">
+              💡 Làm sạch và ép dẹp trước khi bỏ thùng.
+            </div>
+          </div>
+
+          <div class="standard-card card-organic">
+            <div>
+              <span class="standard-badge badge-green">Thùng Màu Xanh Lá Cây</span>
+              <h3 class="standard-title">2. Rác Hữu Cơ / Thực Phẩm</h3>
+              <p style="font-size:0.85rem; color:#6b7280;">Chất thải dễ phân hủy, ủ thành phân compost.</p>
+              <ul class="item-list">
+                <li>✓ Cơm canh thừa, cuống rau, vỏ trái cây</li>
+                <li>✓ Bã cà phê, bã trà, vỏ trứng gà</li>
+                <li>✓ Lá cây khô, hoa héo vụn trong vườn</li>
+              </ul>
+            </div>
+            <div style="margin-top:1.25rem; font-size:0.8rem; color:#047857; font-weight:600;">
+              🌱 Tuyệt đối không lẫn túi nilon, dây thun.
+            </div>
+          </div>
+
+          <div class="standard-card card-hazard">
+            <div>
+              <span class="standard-badge badge-red">Thùng Màu Đỏ / Cam / Xám</span>
+              <h3 class="standard-title">3. Rác Nguy Hại & Còn Lại</h3>
+              <p style="font-size:0.85rem; color:#6b7280;">Chất thải độc hại hoặc không thể tái sinh.</p>
+              <ul class="item-list">
+                <li>⚠️ Pin cũ, ắc quy, bóng đèn huỳnh quang</li>
+                <li>⚠️ Hộp xốp dầu mỡ, tã bỉm, băng vệ sinh</li>
+                <li>⚠️ Mảnh sành sứ vỡ, gương kính, túi bẩn</li>
+              </ul>
+            </div>
+            <div style="margin-top:1.25rem; font-size:0.8rem; color:#b91c1c; font-weight:600;">
+              🚫 Tuyệt đối không đốt pin tại gia đình!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 3: NHẬN DIỆN RÁC BẰNG AI -->
+    <section id="classifier" style="background:#f9fafb;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Thị giác nhân tạo</div>
+          <h2 class="section-title">Nhận Diện Rác Bằng Trí Tuệ Nhân Tạo</h2>
+          <p class="section-desc">
+            Tải ảnh lên hoặc bấm chọn các mẫu rác bên dưới. Mô hình AI sẽ nhận diện tức thì chất liệu, thùng rác tương ứng và hướng dẫn xử lý đúng.
+          </p>
+        </div>
+
+        <div class="classifier-layout">
+          <div>
+            <div class="dropzone-card" onclick="document.getElementById('fileInput').click()">
+              <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="handleFileUpload(event)">
+              <div style="font-size:2.8rem; margin-bottom:0.5rem;">📸</div>
+              <strong style="color:var(--primary-dark); font-size:1.05rem; display:block;">
+                Tải ảnh rác lên hoặc chụp từ điện thoại
+              </strong>
+              <p style="font-size:0.8rem; color:#6b7280; margin-top:0.35rem;">
+                Hỗ trợ định dạng JPG, PNG, WEBP (Phân tích trong 0.8 giây)
+              </p>
+            </div>
+
+            <div style="margin-top:1.5rem; background:white; padding:1.25rem; border-radius:14px; border:1px solid var(--border-color);">
+              <strong style="font-size:0.85rem; color:#374151; display:block; margin-bottom:0.5rem;">
+                Hoặc thử nghiệm nhanh với các mẫu phổ biến:
+              </strong>
+              <div class="preset-pills">
+                <button class="pill-btn active" onclick="classifyPreset('plastic')">Chai nhựa PET</button>
+                <button class="pill-btn" onclick="classifyPreset('banana')">Vỏ chuối</button>
+                <button class="pill-btn" onclick="classifyPreset('battery')">Pin tiểu cũ</button>
+                <button class="pill-btn" onclick="classifyPreset('milk')">Hộp sữa Tetra Pak</button>
+                <button class="pill-btn" onclick="classifyPreset('can')">Lon nhôm</button>
+                <button class="pill-btn" onclick="classifyPreset('greasy')">Hộp xốp dầu mỡ</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-result-card" id="aiResultCard">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+              <div>
+                <span class="result-bin-badge" id="resBinBadge" style="background:#f59e0b;">Rác Tái Chế</span>
+                <h3 id="resTitle" style="font-size:1.35rem; font-weight:800; color:var(--text-dark); margin-top:0.4rem;">
+                  Chai nhựa PET (Nước khoáng)
+                </h3>
+              </div>
+              <div style="text-align:right;">
+                <span id="resConfidence" style="font-size:0.9rem; font-weight:800; color:var(--primary);">Độ tin cậy 98.4%</span>
+                <div id="resPoints" style="font-size:0.8rem; color:#b45309; font-weight:700; margin-top:0.2rem;">+15 Điểm Eco</div>
+              </div>
+            </div>
+
+            <div class="decomp-box">
+              <div>
+                <span style="color:#6b7280; display:block; font-size:0.75rem;">Thời gian phân hủy tự nhiên:</span>
+                <strong id="resDecomp" style="color:#111827;">450 – 500 năm</strong>
+              </div>
+              <div>
+                <span style="color:#6b7280; display:block; font-size:0.75rem;">Quy cách thùng bỏ rác:</span>
+                <strong id="resBinName" style="color:var(--primary);">Thùng Màu Vàng / Trắng</strong>
+              </div>
+            </div>
+
+            <div class="steps-box">
+              <strong style="color:#064e3b; font-size:0.85rem;">Hướng dẫn xử lý đúng cách trước khi vứt:</strong>
+              <ol id="resSteps">
+                <li>Uống hết nước, tráng sơ bằng nước sạch để loại bỏ cặn ngọt.</li>
+                <li>Tháo rời nắp nhựa và bóp bẹp thân chai để giảm thể tích.</li>
+                <li>Bỏ vào thùng rác tái chế có thể tái sinh thành hạt nhựa mới.</li>
+              </ol>
+            </div>
+
+            <div style="margin-top:1rem; padding:0.85rem; background:#fef3c7; border-radius:10px; font-size:0.8rem; color:#92400e; border:1px solid #fde68a;">
+              <strong>Mẹo tái chế sáng tạo (Upcycling):</strong>
+              <span id="resUpcycle">Cắt đôi thân chai làm chậu ươm mầm cây cảnh mini hoặc hệ thống tưới nước nhỏ giọt tự động.</span>
+            </div>
+
+            <div style="margin-top:1.25rem; display:flex; justify-content:flex-end;">
+              <button class="btn-cta" onclick="claimEcoPoints()">Nhận +15 Điểm Thưởng Eco</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 4: BẢN ĐỒ XANH -->
+    <section id="map">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Mạng lưới tuần hoàn</div>
+          <h2 class="section-title">Bản Đồ Xanh Điểm Thu Gom & Tái Chế</h2>
+          <p class="section-desc">
+            Định vị các trạm thu hồi pin cũ, vỏ hộp sữa và điểm đổi rác lấy cây sen đá trên toàn quốc.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:1.5rem; justify-content:center;">
+          <button class="pill-btn active" onclick="filterCity('all', this)">Toàn quốc</button>
+          <button class="pill-btn" onclick="filterCity('Hà Nội', this)">Hà Nội</button>
+          <button class="pill-btn" onclick="filterCity('TP. Hồ Chí Minh', this)">TP. Hồ Chí Minh</button>
+          <button class="pill-btn" onclick="filterCity('Đà Nẵng', this)">Đà Nẵng</button>
+        </div>
+
+        <div class="map-layout">
+          <div class="map-viewport">
+            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="opacity:0.35;">
+              <path d="M45,10 Q58,25 50,45 T55,75 Q50,90 40,88 T35,70" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="3 3"/>
+              <circle cx="50" cy="22" r="12" fill="#a7f3d0" />
+              <circle cx="53" cy="72" r="16" fill="#a7f3d0" />
+            </svg>
+
+            <div class="map-pin active" style="top:22%; left:52%;" onclick="selectStation(0)" title="Hà Nội - Green Life">📍</div>
+            <div class="map-pin" style="top:72%; left:53%;" onclick="selectStation(1)" title="TP.HCM - Việt Nam Tái Chế">📍</div>
+            <div class="map-pin" style="top:46%; left:62%;" onclick="selectStation(2)" title="Đà Nẵng - Trạm Compost">📍</div>
+
+            <div style="position:absolute; bottom:12px; left:12px; background:white; padding:0.4rem 0.8rem; border-radius:8px; font-size:0.75rem; border:1px solid #e5e7eb;">
+              Nhấp vào từng điểm ghim để xem chi tiết
+            </div>
+          </div>
+
+          <div class="locations-list" id="stationsList">
+            <div class="loc-card active" onclick="selectStation(0)">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--primary);">HÀ NỘI · ĐỔI RÁC LẤY QUÀ</span>
+              <strong style="display:block; font-size:0.95rem; margin-top:0.2rem;">Dự Án Green Life Hà Nội</strong>
+              <p style="font-size:0.8rem; color:#4b5563; margin-top:0.25rem;">14 Ngõ 121 Chùa Láng, Đống Đa</p>
+              <div style="font-size:0.75rem; color:#059669; font-weight:600; margin-top:0.35rem;">
+                🎁 Đổi pin, giấy cũ lấy sen đá & xà phòng hữu cơ
+              </div>
+            </div>
+
+            <div class="loc-card" onclick="selectStation(1)">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--primary);">TP. HỒ CHÍ MINH · THU HỒI PIN</span>
+              <strong style="display:block; font-size:0.95rem; margin-top:0.2rem;">Việt Nam Tái Chế - UBND P. Đa Kao</strong>
+              <p style="font-size:0.8rem; color:#4b5563; margin-top:0.25rem;">82 Nguyễn Đình Chiểu, Quận 1</p>
+              <div style="font-size:0.75rem; color:#059669; font-weight:600; margin-top:0.35rem;">
+                🔋 Thu hồi miễn phí pin, điện thoại cũ, bóng đèn
+              </div>
+            </div>
+
+            <div class="loc-card" onclick="selectStation(2)">
+              <span style="font-size:0.75rem; font-weight:700; color:var(--primary);">ĐÀ NẴNG · TRẠM COMPOST</span>
+              <strong style="display:block; font-size:0.95rem; margin-top:0.2rem;">Trạm Compost Cộng Đồng Sơn Trà</strong>
+              <p style="font-size:0.8rem; color:#4b5563; margin-top:0.25rem;">Vườn sinh thái Thọ Quang, Sơn Trà</p>
+              <div style="font-size:0.75rem; color:#059669; font-weight:600; margin-top:0.35rem;">
+                🌱 Tiếp nhận rác hữu cơ, tặng phân trùn quế
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER CHUYỂN TIẾP SANG TRANG THỬ THÁCH RIÊNG -->
+    <section style="background:#f0fdf4;">
+      <div class="container" style="text-align:center;">
+        <div style="max-width:760px; margin:0 auto; background:white; padding:2.5rem; border-radius:20px; border:1px solid #a7f3d0; box-shadow:0 10px 25px -5px rgba(5,150,105,0.1);">
+          <div style="font-size:3rem; margin-bottom:0.75rem;">🔥🎁</div>
+          <span class="slogan-pill">Đấu trường sống xanh mỗi ngày</span>
+          <h2 style="font-size:1.8rem; font-weight:800; color:#064e3b; margin-bottom:0.75rem;">
+            Điểm Danh Hàng Ngày, Tích Lũy Chuỗi & Đổi Quà Sinh Thái
+          </h2>
+          <p style="font-size:0.95rem; color:#4b5563; margin-bottom:1.75rem; line-height:1.6;">
+            Bạn đã duy trì được chuỗi sống xanh bao nhiêu ngày? Đăng nhập mỗi ngày để điểm danh, thực hiện thử thách và đổi điểm cộng dồn lấy cây sen đá, bình giữ nhiệt inox, túi canvas!
+          </p>
+          <button class="btn-cta" onclick="navigateToPage('challenges')" style="padding:0.9rem 2.2rem; font-size:1rem; border-radius:12px;">
+            🚀 Khám Phá Trang Thử Thách & Đổi Quà Ngay
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHẦN 6: TRỢ LÝ CHATBOT AI -->
+    <section id="assistant">
+      <div class="container" style="text-align:center;">
+        <div class="section-header">
+          <div class="section-kicker">Tư vấn trực tuyến 24/7</div>
+          <h2 class="section-title">Trợ Lý Chatbot Sinh Thái AI</h2>
+          <p class="section-desc">
+            Bạn đang phân vân món đồ nào cần phân loại? Nhấn mở ô cửa sổ nhỏ bên dưới để trò chuyện trực tiếp cùng trợ lý sinh thái ECO AI mọi lúc mọi nơi!
+          </p>
+        </div>
+
+        <div style="background:white; max-width:700px; margin:0 auto; padding:2rem; border-radius:18px; border:1px solid var(--border-color); box-shadow:0 10px 25px -5px rgba(0,0,0,0.05);">
+          <div style="font-size:3rem; margin-bottom:0.75rem;">💬</div>
+          <h3 style="font-size:1.25rem; font-weight:800; color:var(--primary-dark); margin-bottom:0.5rem;">
+            Cửa Sổ Trợ Lý Luôn Sẵn Sàng Ở Góc Màn Hình
+          </h3>
+          <p style="font-size:0.9rem; color:#4b5563; margin-bottom:1.5rem; line-height:1.6;">
+            Trợ lý AI được thiết kế dưới dạng <strong>ô cửa sổ pop-up nhỏ gọn tiện lợi</strong>. Bạn có thể vừa tra cứu thông tin vừa duyệt xem các phần khác trên website mà không bị gián đoạn.
+          </p>
+          <button class="btn-cta" onclick="toggleChatWindow(true)" style="padding:0.85rem 2rem; font-size:1rem; border-radius:12px;">
+            💬 Mở Ô Cửa Sổ Chatbot AI Ngay
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ==================== TRANG 2: TRANG THỬ THÁCH SỐNG XANH & ĐỔI QUÀ (TRANG RIÊNG) ==================== -->
+  <div id="page-challenges" class="challenges-page-view">
+    <div class="container">
+      
+      <!-- Back Link -->
+      <div class="back-btn-strip">
+        <div class="back-link" onclick="navigateToPage('main')">
+          <span>← Quay lại Trang Chủ ECO AI</span>
+        </div>
+        <div style="font-size:0.85rem; font-weight:700; color:#047857;">
+          Ươm mầm tri thức, kiến tạo tương lai
+        </div>
+      </div>
+
+      <!-- USER PROFILE & STREAK BANNER -->
+      <div class="user-profile-banner">
+        <div>
+          <span style="font-size:0.8rem; font-weight:800; background:rgba(255,255,255,0.2); padding:0.25rem 0.75rem; border-radius:999px; text-transform:uppercase; letter-spacing:0.05em;">
+            Cộng đồng Sống Xanh ECO AI
+          </span>
+          <h2 style="font-size:clamp(1.5rem, 3vw, 2.2rem); font-weight:900; margin:0.5rem 0 0.25rem;">
+            Xin chào, Đại Sứ Sống Xanh! 🌱
+          </h2>
+          <p style="font-size:0.9rem; opacity:0.9; max-width:600px;">
+            Đăng nhập mỗi ngày, điểm danh đúng giờ và hoàn thành thử thách để tích lũy chuỗi ngày xanh và đổi lấy những phần quà sinh thái ý nghĩa.
+          </p>
+
+          <!-- 7-Day Streak Timeline -->
+          <div class="streak-week-track" id="weekStreakTrack">
+            <div class="streak-day-item done">T2<br>✓</div>
+            <div class="streak-day-item done">T3<br>✓</div>
+            <div class="streak-day-item done">T4<br>✓</div>
+            <div class="streak-day-item done">T5<br>✓</div>
+            <div class="streak-day-item done">T6<br>✓</div>
+            <div class="streak-day-item done">T7<br>✓</div>
+            <div class="streak-day-item done today" id="todayStreakDay">CN<br>🔥</div>
+          </div>
+        </div>
+
+        <!-- Daily Check-in Box -->
+        <div class="checkin-action-card">
+          <div style="font-size:0.75rem; font-weight:700; color:#6b7280; text-transform:uppercase;">Chuỗi ngày xanh</div>
+          <div class="streak-big-val" style="justify-content:center; margin:0.35rem 0;">
+            <span>🔥</span>
+            <span id="streakCountNumber">8</span>
+            <span style="font-size:1.2rem; font-weight:700; color:#4b5563;">ngày</span>
+          </div>
+          
+          <div style="margin-bottom:1rem; font-size:0.85rem; font-weight:700; color:#064e3b;">
+            Tổng tích lũy: <span id="challengesEcoScore" style="color:#059669; font-size:1.1rem;">185</span> Điểm Eco
+          </div>
+
+          <button class="btn-checkin" id="checkinBtn" onclick="doDailyCheckin()">
+            📅 Điểm danh hôm nay (+15 Eco)
+          </button>
+          <div id="checkinStatusText" style="font-size:0.7rem; color:#6b7280; margin-top:0.4rem;">
+            Chưa điểm danh hôm nay
+          </div>
+        </div>
+      </div>
+
+      <!-- TABS: THỬ THÁCH / ĐỔI QUÀ / LỊCH SỬ -->
+      <div class="hub-tabs">
+        <button class="hub-tab-btn active" onclick="switchHubTab('tasks', this)">
+          📋 Nhiệm Vụ & Thử Thách
+        </button>
+        <button class="hub-tab-btn" onclick="switchHubTab('shop', this)">
+          🎁 Cửa Hàng Đổi Quà Sinh Thái
+        </button>
+        <button class="hub-tab-btn" onclick="switchHubTab('my-gifts', this)">
+          🎟️ Quà Của Tôi (<span id="myGiftsCount">0</span>)
+        </button>
+        <button class="hub-tab-btn" onclick="switchHubTab('badges', this)">
+          🎖️ Huy Hiệu & Chứng Nhận
+        </button>
+      </div>
+
+      <!-- TAB 1: NHIỆM VỤ THỬ THÁCH -->
+      <div id="hub-content-tasks">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;" class="tasks-two-col">
+          <!-- Hàng ngày -->
+          <div style="background:white; padding:1.5rem; border-radius:18px; border:1px solid var(--border-color);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <h3 style="font-size:1.15rem; font-weight:800; color:#064e3b;">☀️ Thử Thách Mỗi Ngày</h3>
+              <span style="font-size:0.75rem; background:#d1fae5; color:#065f46; padding:0.2rem 0.5rem; border-radius:6px; font-weight:700;">Làm mới lúc 00:00</span>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+              <label class="challenge-item">
+                <input type="checkbox" checked onchange="toggleChallengeHub(this, 20)">
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <strong style="font-size:0.85rem;">Nói không với túi nilon và ly nhựa</strong>
+                    <span style="font-size:0.8rem; font-weight:800; color:#059669;">+20 Eco</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:#6b7280; margin-top:0.2rem;">Sử dụng túi vải canvas hoặc làn cói khi đi chợ, siêu thị.</p>
+                </div>
+              </label>
+
+              <label class="challenge-item">
+                <input type="checkbox" checked onchange="toggleChallengeHub(this, 25)">
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <strong style="font-size:0.85rem;">Phân loại rác nhà bếp vào thùng hữu cơ</strong>
+                    <span style="font-size:0.8rem; font-weight:800; color:#059669;">+25 Eco</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:#6b7280; margin-top:0.2rem;">Tách vỏ hoa quả, bã cà phê vào thùng riêng bón cây.</p>
+                </div>
+              </label>
+
+              <label class="challenge-item">
+                <input type="checkbox" onchange="toggleChallengeHub(this, 15)">
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <strong style="font-size:0.85rem;">Tráng sạch và ép dẹp 2 vỏ hộp sữa giấy</strong>
+                    <span style="font-size:0.8rem; font-weight:800; color:#059669;">+15 Eco</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:#6b7280; margin-top:0.2rem;">Gấp phẳng hộp Tetra Pak để tái chế làm mái lợp sinh thái.</p>
+                </div>
+              </label>
+
+              <label class="challenge-item">
+                <input type="checkbox" onchange="toggleChallengeHub(this, 20)">
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <strong style="font-size:0.85rem;">Mang bình nước cá nhân khi ra ngoài</strong>
+                    <span style="font-size:0.8rem; font-weight:800; color:#059669;">+20 Eco</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:#6b7280; margin-top:0.2rem;">Từ chối cốc nhựa dùng một lần tại quán cà phê.</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Hàng tuần -->
+          <div style="background:white; padding:1.5rem; border-radius:18px; border:1px solid var(--border-color);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+              <h3 style="font-size:1.15rem; font-weight:800; color:#064e3b;">🗓️ Thử Thách Tuần Này</h3>
+              <span style="font-size:0.75rem; background:#fef3c7; color:#b45309; padding:0.2rem 0.5rem; border-radius:6px; font-weight:700;">Điểm thưởng lớn</span>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+              <label class="challenge-item">
+                <input type="checkbox" onchange="toggleChallengeHub(this, 50)">
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <strong style="font-size:0.85rem;">Mang tối thiểu 5 viên pin cũ tới trạm thu gom</strong>
+                    <span style="font-size:0.8rem; font-weight:800; color:#ea580c;">+50 Eco</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:#6b7280; margin-top:0.2rem;">Bảo vệ 500 lít nước ngầm và đất đai không bị nhiễm độc chì.</p>
+                </div>
+              </label>
+
+              <label class="challenge-item">
+                <input type="checkbox" onchange="toggleChallengeHub(this, 60)">
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <strong style="font-size:0.85rem;">Tự ủ mẻ phân hữu cơ đầu tiên tại nhà</strong>
+                    <span style="font-size:0.8rem; font-weight:800; color:#ea580c;">+60 Eco</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:#6b7280; margin-top:0.2rem;">Dùng xô có nắp đậy, trộn bã cà phê và lá khô làm phân vi sinh.</p>
+                </div>
+              </label>
+
+              <label class="challenge-item">
+                <input type="checkbox" onchange="toggleChallengeHub(this, 40)">
+                <div style="flex:1;">
+                  <div style="display:flex; justify-content:space-between;">
+                    <strong style="font-size:0.85rem;">Lan tỏa kiến thức phân loại cho 2 người bạn</strong>
+                    <span style="font-size:0.8rem; font-weight:800; color:#ea580c;">+40 Eco</span>
+                  </div>
+                  <p style="font-size:0.75rem; color:#6b7280; margin-top:0.2rem;">Hướng dẫn người thân hoặc bạn bè phân loại 3 thùng rác.</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: CỬA HÀNG ĐỔI QUÀ (GIFT SHOP) -->
+      <div id="hub-content-shop" style="display:none;">
+        <div style="margin-bottom:1.5rem; text-align:center;">
+          <h3 style="font-size:1.5rem; font-weight:800; color:#064e3b;">Cửa Hàng Đổi Quà Sinh Thái ECO AI</h3>
+          <p style="font-size:0.9rem; color:#4b5563;">
+            Điểm Eco của bạn tích lũy từ các lần quét rác và làm thử thách có thể quy đổi thành các sản phẩm sống xanh dưới đây!
+          </p>
+        </div>
+
+        <div class="gift-shop-grid">
+          <!-- Quà 1 -->
+          <div class="gift-item-card">
+            <div>
+              <div class="gift-icon-box">🪴</div>
+              <span class="gift-points-badge">100 Điểm Eco</span>
+              <h4 style="font-size:1.05rem; font-weight:800; color:#111827;">Chậu Sen Đá Để Bàn Mini</h4>
+              <p style="font-size:0.8rem; color:#6b7280; margin-top:0.35rem;">
+                Cây sen đá mầm xanh lọc không khí, trồng trong chậu gốm nung thân thiện môi trường.
+              </p>
+            </div>
+            <button class="gift-btn" onclick="redeemGift('Chậu Sen Đá Để Bàn Mini', 100)">Đổi 100 Điểm</button>
+          </div>
+
+          <!-- Quà 2 -->
+          <div class="gift-item-card">
+            <div>
+              <div class="gift-icon-box">👜</div>
+              <span class="gift-points-badge">150 Điểm Eco</span>
+              <h4 style="font-size:1.05rem; font-weight:800; color:#111827;">Túi Vải Canvas Sống Xanh</h4>
+              <p style="font-size:0.8rem; color:#6b7280; margin-top:0.35rem;">
+                Túi vải dệt cotton thô 100% tự nhiên in thông điệp bảo vệ hành tinh xanh, bền chắc thay thế túi nilon.
+              </p>
+            </div>
+            <button class="gift-btn" onclick="redeemGift('Túi Vải Canvas Sống Xanh', 150)">Đổi 150 Điểm</button>
+          </div>
+
+          <!-- Quà 3 -->
+          <div class="gift-item-card">
+            <div>
+              <div class="gift-icon-box">🎋</div>
+              <span class="gift-points-badge">80 Điểm Eco</span>
+              <h4 style="font-size:1.05rem; font-weight:800; color:#111827;">Bộ Ống Hút Tre & Cọ Xơ Mướp</h4>
+              <p style="font-size:0.8rem; color:#6b7280; margin-top:0.35rem;">
+                Gồm 3 ống hút tre tự nhiên + 1 cọ rửa xơ mướp sạch sẽ đựng trong túi dây rút vải lanh.
+              </p>
+            </div>
+            <button class="gift-btn" onclick="redeemGift('Bộ Ống Hút Tre & Cọ Xơ Mướp', 80)">Đổi 80 Điểm</button>
+          </div>
+
+          <!-- Quà 4 -->
+          <div class="gift-item-card">
+            <div>
+              <div class="gift-icon-box">🧼</div>
+              <span class="gift-points-badge">90 Điểm Eco</span>
+              <h4 style="font-size:1.05rem; font-weight:800; color:#111827;">Xà Phòng Hữu Cơ Dầu Dừa</h4>
+              <p style="font-size:0.8rem; color:#6b7280; margin-top:0.35rem;">
+                Xà phòng thủ công làm từ dầu dừa Bến Tre và thảo mộc thiên nhiên, tự phân hủy sinh học 100%.
+              </p>
+            </div>
+            <button class="gift-btn" onclick="redeemGift('Xà Phòng Hữu Cơ Dầu Dừa', 90)">Đổi 90 Điểm</button>
+          </div>
+
+          <!-- Quà 5 -->
+          <div class="gift-item-card">
+            <div>
+              <div class="gift-icon-box">🥤</div>
+              <span class="gift-points-badge">250 Điểm Eco</span>
+              <h4 style="font-size:1.05rem; font-weight:800; color:#111827;">Bình Giữ Nhiệt Inox 304 500ml</h4>
+              <p style="font-size:0.8rem; color:#6b7280; margin-top:0.35rem;">
+                Bình giữ nhiệt 2 lớp giữ nóng/lạnh 12 giờ, thiết kế tối giản có khắc laser logo ECO AI.
+              </p>
+            </div>
+            <button class="gift-btn" onclick="redeemGift('Bình Giữ Nhiệt Inox 304 500ml', 250)">Đổi 250 Điểm</button>
+          </div>
+
+          <!-- Quà 6 -->
+          <div class="gift-item-card">
+            <div>
+              <div class="gift-icon-box">🎫</div>
+              <span class="gift-points-badge">120 Điểm Eco</span>
+              <h4 style="font-size:1.05rem; font-weight:800; color:#111827;">Voucher 50k Refill Nước Giặt</h4>
+              <p style="font-size:0.8rem; color:#6b7280; margin-top:0.35rem;">
+                Phiếu giảm giá 50.000đ khi mang chai cũ đến châm lại nước giặt sinh học tại chuỗi đối tác xanh.
+              </p>
+            </div>
+            <button class="gift-btn" onclick="redeemGift('Voucher 50k Refill Nước Giặt Sinh Học', 120)">Đổi 120 Điểm</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: QUÀ CỦA TÔI -->
+      <div id="hub-content-my-gifts" style="display:none;">
+        <div style="margin-bottom:1.5rem; text-align:center;">
+          <h3 style="font-size:1.4rem; font-weight:800; color:#064e3b;">Quà Tặng Sinh Thái Đã Đổi</h3>
+          <p style="font-size:0.85rem; color:#6b7280;">
+            Mang mã quà tặng này đến các trạm đối tác của ECO AI hoặc Green Life để nhận quà trực tiếp!
+          </p>
+        </div>
+
+        <div class="redeemed-list" id="myRedeemedList">
+          <div style="text-align:center; padding:3rem 1rem; color:#6b7280; background:white; border-radius:16px; border:1px solid var(--border-color);">
+            <div style="font-size:2.5rem; margin-bottom:0.5rem;">🎁</div>
+            <p>Bạn chưa đổi phần quà nào. Hãy hoàn thành thử thách để tích lũy điểm và đổi quà nhé!</p>
+            <button class="btn-cta" style="margin-top:1rem;" onclick="switchHubTab('shop', document.querySelectorAll('.hub-tab-btn')[1])">
+              Xem cửa hàng quà tặng
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: HUY HIỆU & CHỨNG NHẬN -->
+      <div id="hub-content-badges" style="display:none;">
+        <div style="background:white; padding:2rem; border-radius:20px; border:1px solid var(--border-color); max-width:850px; margin:0 auto;">
+          <div style="text-align:center; margin-bottom:1.75rem;">
+            <h3 style="font-size:1.4rem; font-weight:800; color:#064e3b;">Huy Hiệu Vinh Danh & Chứng Nhận</h3>
+            <p style="font-size:0.85rem; color:#6b7280;">Hành trình từng bước trở thành Đại sứ Môi trường xuất sắc.</p>
+          </div>
+
+          <div class="badges-row" style="margin-top:0;">
+            <div class="badge-card">
+              <div class="badge-icon">🌱</div>
+              <strong style="font-size:0.85rem; display:block;">Hạt Mầm Xanh</strong>
+              <span style="font-size:0.75rem; color:#059669; font-weight:700;">✓ Đã mở khóa</span>
+            </div>
+            <div class="badge-card">
+              <div class="badge-icon">♻️</div>
+              <strong style="font-size:0.85rem; display:block;">Hiệp Sĩ Tái Chế</strong>
+              <span style="font-size:0.75rem; color:#059669; font-weight:700;">✓ Đã mở khóa</span>
+            </div>
+            <div class="badge-card">
+              <div class="badge-icon">✨</div>
+              <strong style="font-size:0.85rem; display:block;">Bàn Tay Xanh</strong>
+              <span style="font-size:0.75rem; color:#059669; font-weight:700;">✓ Đã mở khóa</span>
+            </div>
+            <div class="badge-card">
+              <div class="badge-icon">🌍</div>
+              <strong style="font-size:0.85rem; display:block;">Đại Sứ Sinh Thái</strong>
+              <span style="font-size:0.75rem; color:#b45309; font-weight:700;">Cần 200 điểm</span>
+            </div>
+          </div>
+
+          <!-- Chứng nhận sinh thái cá nhân -->
+          <div style="margin-top:2.5rem; padding:1.5rem; background:#ecfdf5; border-radius:16px; border:2px dashed #059669; text-align:center;">
+            <span style="font-size:0.75rem; font-weight:800; color:#047857; text-transform:uppercase; letter-spacing:0.05em;">
+              CHỨNG NHẬN CÔNG DÂN XANH VIỆT NAM
+            </span>
+            <h4 style="font-size:1.3rem; font-weight:900; color:#064e3b; margin:0.35rem 0;">
+              ĐẠI SỨ SỐNG XANH ECO AI
+            </h4>
+            <p style="font-size:0.85rem; color:#374151; max-width:550px; margin:0 auto 1rem;">
+              Chứng nhận ghi nhận nỗ lực phân loại rác thải tại nguồn và tích lũy chuỗi ngày sống xanh vì một tương lai bền vững.
+            </p>
+            <div style="display:flex; justify-content:center; gap:0.5rem; max-width:400px; margin:0 auto;">
+              <input type="text" id="certUserName" placeholder="Nhập tên của bạn..." value="Nguyễn Văn Xanh" style="padding:0.5rem 0.85rem; border:1px solid #a7f3d0; border-radius:8px; font-size:0.85rem; flex:1; outline:none;">
+              <button class="btn-cta" onclick="alert('Đã tạo chứng nhận thành công cho: ' + document.getElementById('certUserName').value + '! Bạn có thể chụp màn hình để chia sẻ!')">Lưu Chứng Nhận</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- NÚT NỔI Ở GÓC DƯỚI BÊN PHẢI -->
+  <button class="chat-floating-btn" id="chatLaunchBtn" onclick="toggleChatWindow(true)">
+    <span>💬</span>
+    <span>Chat với ECO AI</span>
+  </button>
+
+  <!-- Ô CỬA SỔ NHỎ CHATBOX POPUP -->
+  <div class="chat-popup-window" id="chatModal">
+    <div class="chat-popup-header">
+      <div style="display:flex; align-items:center; gap:0.5rem;">
+        <span>🌱</span>
+        <span>Trợ Lý ECO AI</span>
+      </div>
+      <div style="display:flex; gap:0.5rem; align-items:center;">
+        <span style="cursor:pointer; font-size:0.9rem;" onclick="resetChat()" title="Làm mới">↺</span>
+        <span style="cursor:pointer; font-size:1.1rem; padding:0 0.2rem;" onclick="toggleChatWindow(false)" title="Đóng">✕</span>
+      </div>
+    </div>
+
+    <!-- Quick Prompts in Chat -->
+    <div style="padding:0.4rem 0.6rem; background:#ecfdf5; border-bottom:1px solid #d1fae5; display:flex; gap:0.35rem; overflow-x:auto;">
+      <button class="pill-btn" style="padding:0.2rem 0.5rem; font-size:0.7rem;" onclick="askChat('Pin cũ vứt ở đâu an toàn?')">Pin cũ?</button>
+      <button class="pill-btn" style="padding:0.2rem 0.5rem; font-size:0.7rem;" onclick="askChat('Vỏ hộp sữa giấy có tái chế được không?')">Hộp sữa?</button>
+      <button class="pill-btn" style="padding:0.2rem 0.5rem; font-size:0.7rem;" onclick="askChat('Cách ủ phân hữu cơ tại nhà?')">Ủ compost?</button>
+    </div>
+
+    <div class="chat-popup-messages" id="chatMessages">
+      <div class="chat-msg msg-bot">
+        Xin chào! Tôi là Trợ Lý ECO AI 🌿. Bạn đang phân vân không biết món đồ nào bỏ thùng rác nào? Hãy hỏi tôi ngay nhé!
+      </div>
+    </div>
+
+    <div class="chat-popup-input-bar">
+      <input type="text" id="chatInput" class="chat-popup-input" placeholder="Hỏi về rác, cách tái chế, pin..." onkeypress="if(event.key==='Enter') sendChatMessage()">
+      <button class="btn-cta" style="padding:0.45rem 0.85rem; font-size:0.8rem;" onclick="sendChatMessage()">Gửi</button>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX PHÓNG TO HÌNH ẢNH TOÀN MÀN HÌNH -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+    <img src="/src/assets/images/hero_eco_ai_green_1791815814731.jpg" alt="Toàn cảnh thành phố xanh">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <strong style="font-size:1.2rem; color:white; display:block; margin-bottom:0.35rem;">
+        ECO AI – TRỢ LÝ PHÂN LOẠI RÁC THÔNG MINH
+      </strong>
+      <p style="color:#a7f3d0; margin-bottom:1rem; font-size:0.9rem;">
+        Ươm mầm tri thức, kiến tạo tương lai
+      </p>
+      <p style="font-size:0.8rem; color:#6ee7b7;">
+        © 2026 ECO AI. Tuân thủ Luật Bảo vệ Môi trường Việt Nam năm 2020. Chung tay vì một tương lai xanh bền vững.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT ĐIỀU KHIỂN TOÀN BỘ HỆ THỐNG -->
+  <script>
+    // Trạng thái điểm tích lũy & chuỗi sống xanh
+    let userEcoPoints = 185;
+    let userStreakDays = 8;
+    let hasCheckedInToday = false;
+    let redeemedGiftsList = [];
+
+    // Navigation chuyển đổi giữa Trang chính và Trang Thử Thách Riêng
+    function navigateToPage(pageName, targetSectionId) {
+      const pageMain = document.getElementById('page-main');
+      const pageChallenges = document.getElementById('page-challenges');
+
+      if (pageName === 'challenges') {
+        pageMain.style.display = 'none';
+        pageChallenges.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        pageChallenges.style.display = 'none';
+        pageMain.style.display = 'block';
+        if (targetSectionId) {
+          const el = document.getElementById(targetSectionId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }
+
+    // Cập nhật điểm đồng bộ toàn hệ thống
+    function updateEcoPointsDisplay() {
+      document.getElementById('navEcoScore').innerText = userEcoPoints;
+      const chScore = document.getElementById('challengesEcoScore');
+      if (chScore) chScore.innerText = userEcoPoints;
+      const countEl = document.getElementById('myGiftsCount');
+      if (countEl) countEl.innerText = redeemedGiftsList.length;
+    }
+
+    // Điểm danh hàng ngày
+    function doDailyCheckin() {
+      if (hasCheckedInToday) {
+        alert('Hôm nay bạn đã điểm danh rồi! Hãy quay lại vào ngày mai để tiếp tục duy trì chuỗi nhé! 🔥');
+        return;
+      }
+      userEcoPoints += 15;
+      userStreakDays += 1;
+      hasCheckedInToday = true;
+
+      // Cập nhật giao diện
+      document.getElementById('streakCountNumber').innerText = userStreakDays;
+      document.getElementById('checkinBtn').disabled = true;
+      document.getElementById('checkinBtn').innerText = '✓ Đã điểm danh hôm nay (+15 Eco)';
+      document.getElementById('checkinStatusText').innerText = 'Chuỗi của bạn đã tăng lên ' + userStreakDays + ' ngày liên tiếp! 🔥';
+      
+      const todayDayEl = document.getElementById('todayStreakDay');
+      if (todayDayEl) todayDayEl.classList.add('done');
+
+      updateEcoPointsDisplay();
+      alert('🎉 Chúc mừng bạn đã điểm danh thành công! +15 Điểm Eco đã được cộng dồn và chuỗi sống xanh tăng lên ' + userStreakDays + ' ngày liên tiếp!');
+    }
+
+    // Chuyển tab trong Trang Thử Thách
+    function switchHubTab(tabName, btnEl) {
+      document.querySelectorAll('.hub-tab-btn').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+
+      document.getElementById('hub-content-tasks').style.display = (tabName === 'tasks') ? 'block' : 'none';
+      document.getElementById('hub-content-shop').style.display = (tabName === 'shop') ? 'block' : 'none';
+      document.getElementById('hub-content-my-gifts').style.display = (tabName === 'my-gifts') ? 'block' : 'none';
+      document.getElementById('hub-content-badges').style.display = (tabName === 'badges') ? 'block' : 'none';
+    }
+
+    // Đổi quà sinh thái
+    function redeemGift(giftName, pointsCost) {
+      if (userEcoPoints < pointsCost) {
+        const need = pointsCost - userEcoPoints;
+        alert('Bạn chưa đủ điểm Eco để đổi "' + giftName + '" (Cần ' + pointsCost + ' điểm). Hãy làm thêm thử thách hoặc quét rác để kiếm thêm ' + need + ' điểm nữa nhé! 🌱');
+        return;
+      }
+
+      if (confirm('Bạn có chắc chắn muốn dùng ' + pointsCost + ' Điểm Eco để đổi phần quà: "' + giftName + '" không?')) {
+        userEcoPoints -= pointsCost;
+        const code = 'ECO-' + Math.floor(100000 + Math.random() * 900000);
+        const giftItem = {
+          name: giftName,
+          cost: pointsCost,
+          code: code,
+          time: new Date().toLocaleDateString('vi-VN')
+        };
+        redeemedGiftsList.push(giftItem);
+        updateEcoPointsDisplay();
+        renderMyRedeemedGifts();
+        
+        alert('🎉 Đổi quà thành công! Bạn nhận được mã quà tặng: ' + code + ' cho phần quà: ' + giftName + '. Xem mã tại tab "Quà Của Tôi".');
+      }
+    }
+
+    // Render danh sách quà đã đổi
+    function renderMyRedeemedGifts() {
+      const container = document.getElementById('myRedeemedList');
+      if (redeemedGiftsList.length === 0) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:3rem 1rem; color:#6b7280; background:white; border-radius:16px; border:1px solid var(--border-color);">
+            <div style="font-size:2.5rem; margin-bottom:0.5rem;">🎁</div>
+            <p>Bạn chưa đổi phần quà nào. Hãy hoàn thành thử thách để tích lũy điểm và đổi quà nhé!</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      redeemedGiftsList.forEach(g => {
+        html += `
+          <div class="redeemed-item">
+            <div>
+              <strong style="color:#064e3b; font-size:1rem; display:block;">🎁 ${g.name}</strong>
+              <span style="font-size:0.75rem; color:#6b7280;">Ngày đổi: ${g.time} · Đã trừ ${g.cost} Điểm Eco</span>
+            </div>
+            <div style="text-align:right;">
+              <span style="font-size:0.7rem; color:#6b7280; display:block;">MÃ NHẬN QUÀ:</span>
+              <span class="redeem-code">${g.code}</span>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    // Checkbox thử thách trên trang Hub
+    function toggleChallengeHub(cb, pts) {
+      if (cb.checked) {
+        userEcoPoints += pts;
+        alert('Hoàn thành thử thách! Bạn được cộng +' + pts + ' Điểm Eco tích lũy!');
+      } else {
+        userEcoPoints -= pts;
+      }
+      updateEcoPointsDisplay();
+    }
+
+    // Mẫu nhận diện rác
+    const wastePresets = {
+      plastic: {
+        title: 'Chai nhựa PET (Nước khoáng / Nước ngọt)',
+        binBadge: 'Rác Tái Chế',
+        binColor: '#f59e0b',
+        binName: 'Thùng Màu Trắng / Vàng',
+        conf: '98.4%',
+        points: 15,
+        decomp: '450 – 500 năm',
+        steps: [
+          'Uống hết nước, tráng sơ bằng nước sạch để loại bỏ cặn ngọt.',
+          'Tháo rời nắp nhựa và bóp bẹp thân chai để giảm thể tích.',
+          'Bỏ vào ngăn rác tái chế có thể tái sinh thành hạt nhựa mới.'
+        ],
+        upcycle: 'Cắt đôi thân chai làm chậu ươm mầm cây cảnh mini hoặc hệ thống tưới nước nhỏ giọt tự động.'
+      },
+      banana: {
+        title: 'Vỏ chuối & Phế phẩm hoa quả',
+        binBadge: 'Rác Hữu Cơ',
+        binColor: '#10b981',
+        binName: 'Thùng Màu Xanh Lá Cây',
+        conf: '99.1%',
+        points: 10,
+        decomp: '2 – 4 tuần',
+        steps: [
+          'Tách rời khỏi bao bì nilon hoặc tem nhãn dán trên vỏ quả.',
+          'Cắt nhỏ thành mẩu 2-3 cm để tăng tốc độ phân hủy vi sinh.',
+          'Cho vào thùng ủ phân compost bón cây cảnh hoặc rau sạch.'
+        ],
+        upcycle: 'Ngâm vỏ chuối trong nước 48 giờ để tạo dung dịch giàu kali tưới hoa lan rất tốt.'
+      },
+      battery: {
+        title: 'Pin tiểu AA / AAA cũ',
+        binBadge: 'Rác Nguy Hại',
+        binColor: '#ef4444',
+        binName: 'Thùng Màu Đỏ / Trạm Thu Hồi Riêng',
+        conf: '98.8%',
+        points: 25,
+        decomp: 'Không phân hủy sinh học (Chứa chì, thủy ngân)',
+        steps: [
+          'TUYỆT ĐỐI KHÔNG vứt chung vào thùng rác sinh hoạt gia đình.',
+          'Dán băng dính cách điện vào 2 cực để tránh chập cháy.',
+          'Tích trữ nơi khô ráo, đem đến trạm thu hồi pin miễn phí.'
+        ],
+        upcycle: 'Mang tới các trạm đổi pin lấy cây của Green Life hoặc siêu thị WinMart.'
+      },
+      milk: {
+        title: 'Vỏ hộp sữa giấy tiệt trùng (Tetra Pak)',
+        binBadge: 'Rác Tái Chế',
+        binColor: '#f59e0b',
+        binName: 'Thùng Màu Trắng / Vàng',
+        conf: '97.5%',
+        points: 20,
+        decomp: '5 – 30 năm',
+        steps: [
+          'Uống hết sữa, kéo bung 4 góc hộp sữa.',
+          'Bóp bẹp hoàn toàn và xếp gọn gàng gập phẳng.',
+          'Mang đến trạm Lagom Vietnam để tái chế thành tấm lợp nhà.'
+        ],
+        upcycle: 'Tái chế thành bột giấy cao cấp làm tập vở học sinh và tấm lợp sinh thái.'
+      },
+      can: {
+        title: 'Lon nhôm nước ngọt / Nước giải khát',
+        binBadge: 'Rác Tái Chế',
+        binColor: '#f59e0b',
+        binName: 'Thùng Màu Trắng / Vàng',
+        conf: '99.2%',
+        points: 15,
+        decomp: '80 – 200 năm',
+        steps: [
+          'Dốc cạn nước bên trong, tráng nhanh với nước.',
+          'Dùng chân hoặc tay ép dẹp lon để tiết kiệm chỗ chứa.',
+          'Bỏ vào thùng tái chế kim loại.'
+        ],
+        upcycle: 'Nhôm có khả năng tái chế vô hạn lần mà không giảm chất lượng.'
+      },
+      greasy: {
+        title: 'Hộp xốp dính dầu mỡ thực phẩm',
+        binBadge: 'Rác Vô Cơ Còn Lại',
+        binColor: '#6b7280',
+        binName: 'Thùng Màu Xám / Đen',
+        conf: '95.6%',
+        points: 5,
+        decomp: '50 – 100 năm',
+        steps: [
+          'Loại bỏ thức ăn thừa vào thùng rác hữu cơ.',
+          'Hộp xốp dính dầu mỡ không thể tái chế, bỏ vào thùng rác còn lại.',
+          'Hạn chế sử dụng, chuyển sang dùng hộp bã mía hoặc hộp thủy tinh.'
+        ],
+        upcycle: 'Thay thế bằng hộp thủy tinh dùng nhiều lần khi mua thức ăn mang về.'
+      }
+    };
+
+    let currentScanReward = 15;
+
+    function classifyPreset(type) {
+      document.querySelectorAll('.preset-pills .pill-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const data = wastePresets[type];
+      if (!data) return;
+
+      currentScanReward = data.points;
+      document.getElementById('resTitle').innerText = data.title;
+      document.getElementById('resBinBadge').innerText = data.binBadge;
+      document.getElementById('resBinBadge').style.backgroundColor = data.binColor;
+      document.getElementById('resConfidence').innerText = 'Độ tin cậy ' + data.conf;
+      document.getElementById('resPoints').innerText = '+' + data.points + ' Điểm Eco';
+      document.getElementById('resDecomp').innerText = data.decomp;
+      document.getElementById('resBinName').innerText = data.binName;
+      document.getElementById('resBinName').style.color = data.binColor;
+      document.getElementById('resUpcycle').innerText = data.upcycle;
+
+      const stepsOl = document.getElementById('resSteps');
+      stepsOl.innerHTML = '';
+      data.steps.forEach(st => {
+        const li = document.createElement('li');
+        li.innerText = st;
+        stepsOl.appendChild(li);
+      });
+    }
+
+    function handleFileUpload(e) {
+      const file = e.target.files[0];
+      if (file) {
+        classifyPreset('plastic');
+      }
+    }
+
+    function claimEcoPoints() {
+      userEcoPoints += currentScanReward;
+      updateEcoPointsDisplay();
+      alert('Chúc mừng! Bạn đã nhận được +' + currentScanReward + ' Điểm Eco tích lũy vào tài khoản! 🌱');
+    }
+
+    function filterCity(city, btn) {
+      document.querySelectorAll('#map .pill-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function selectStation(idx) {
+      const cards = document.querySelectorAll('#stationsList .loc-card');
+      const pins = document.querySelectorAll('.map-pin');
+      cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+      pins.forEach((p, i) => p.classList.toggle('active', i === idx));
+    }
+
+    // Điều khiển Chatbot Popup
+    function toggleChatWindow(show) {
+      const modal = document.getElementById('chatModal');
+      const btn = document.getElementById('chatLaunchBtn');
+      if (show) {
+        modal.style.display = 'flex';
+        btn.style.display = 'none';
+        setTimeout(() => document.getElementById('chatInput').focus(), 150);
+      } else {
+        modal.style.display = 'none';
+        btn.style.display = 'flex';
+      }
+    }
+
+    function resetChat() {
+      document.getElementById('chatMessages').innerHTML = `
+        <div class="chat-msg msg-bot">
+          Cuộc trò chuyện đã được làm mới. Hãy hỏi bất kỳ câu hỏi nào về phân loại rác, cách đổi quà và bảo vệ môi trường nhé!
+        </div>
+      `;
+    }
+
+    function askChat(query) {
+      document.getElementById('chatInput').value = query;
+      sendChatMessage();
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const container = document.getElementById('chatMessages');
+      const userMsg = document.createElement('div');
+      userMsg.className = 'chat-msg msg-user';
+      userMsg.innerText = text;
+      container.appendChild(userMsg);
+      input.value = '';
+
+      setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'chat-msg msg-bot';
+        const q = text.toLowerCase();
+
+        if (q.includes('pin') || q.includes('điện tử')) {
+          botMsg.innerText = 'Pin cũ là RÁC NGUY HẠI. Tuyệt đối KHÔNG vứt chung vào rác sinh hoạt vì chứa thủy ngân và chì độc hại. Bạn hãy dán băng dính vào 2 cực và mang tới trạm thu hồi pin miễn phí (WinMart, UBND phường) nhé!';
+        } else if (q.includes('hộp sữa') || q.includes('tetra')) {
+          botMsg.innerText = 'Vỏ hộp sữa giấy tiệt trùng có thể tái chế 100%! Hãy uống hết sữa, kéo bung 4 góc hộp, bóp bẹp phẳng lại và mang tới trạm Lagom để ép thành tấm lợp nhà và vở học sinh!';
+        } else if (q.includes('đổi quà') || q.includes('quà') || q.includes('tích điểm')) {
+          botMsg.innerText = 'Bạn có thể vào mục "Thử thách & Đổi quà" trên Menu để dùng Điểm Eco đổi lấy: Chậu sen đá (100đ), Túi canvas (150đ), Bình giữ nhiệt (250đ) hoặc Voucher refill nhé!';
+        } else if (q.includes('hữu cơ') || q.includes('compost') || q.includes('rau') || q.includes('thức ăn')) {
+          botMsg.innerText = 'Rác hữu cơ (vỏ chuối, bã cà phê, rau củ) bỏ vào Thùng Màu Xanh Lá Cây. Bạn có thể ủ compost tại nhà bằng thùng xốp kín nắp và men vi sinh để làm phân bón hoa không mùi!';
+        } else {
+          botMsg.innerText = 'Cảm ơn câu hỏi của bạn! Theo Luật Môi trường Việt Nam, hãy phân thành 3 nhóm: Hữu cơ (Xanh lá), Tái chế (Vàng/Trắng) và Rác còn lại (Đỏ/Xám). Bạn có thể bấm mục "Nhận diện AI" phía trên để chụp ảnh quét trực tiếp nhé!';
+        }
+
+        container.appendChild(botMsg);
+        container.scrollTop = container.scrollHeight;
+      }, 500);
+    }
+
+    function openLightbox() {
+      document.getElementById('lightboxModal').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightboxModal').style.display = 'none';
+    }
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mainNav');
+      nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+      if (nav.style.display === 'flex') {
+        nav.style.position = 'absolute';
+        nav.style.top = '100%';
+        nav.style.left = '0';
+        nav.style.right = '0';
+        nav.style.background = 'white';
+        nav.style.flexDirection = 'column';
+        nav.style.padding = '1rem';
+        nav.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)';
+      }
+    }
+
+    // Khởi tạo hiển thị
+    updateEcoPointsDisplay();
+  </script>
+</body>
+</html>
